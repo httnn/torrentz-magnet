@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    var pathName = location.pathname.replace(/\//g, "");
-    var magnetLogoURL = chrome.extension.getURL("icon16.png");
+	var pathName = location.pathname.replace(/\//g, "");
+	var magnetLogoURL = chrome.extension.getURL("icon16.png");
     if(pathName.length === 40) {
         var torrentName = $(".download>h2>span").html().replace(/<[^>]*>/g, "");
         var magnetLink = "magnet:?xt=urn:btih:" + pathName + "&dn=" + encodeURI(torrentName);
