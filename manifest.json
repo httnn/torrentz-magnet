@@ -1,12 +1,13 @@
 {
    "content_scripts": [ {
-      "js": [ "jquery.js", "script.js" ],
+      "js": [ "script.js" ],
+	  "run_at": "document_end",
       "matches": [ "http://torrentz.eu/*", "https://torrentz.eu/*", "https://torrentz.me/*", "https://torrentz.in/*" ]
    } ],
    "description": "Adds magnet links to torrent files on Torrentz.",
    "manifest_version": 2,
    "name": "Magnet Links for Torrentz",
-   "version": "0.4",
+   "version": "0.5",
 "web_accessible_resources": ["icon16.png"],
    "icons": { "16": "icon16.png",
            "48": "icon48.png",
