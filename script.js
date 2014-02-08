@@ -13,7 +13,7 @@ try {
 			var torrentName = link.innerHTML.replace(/<[^>]*>/g, "");
 			var infoHash = link.getAttribute("href").replace(/\//g, "");
 			var magnetLinkURI = "magnet:?xt=urn:btih:" + infoHash + "&dn=" + encodeURI(torrentName);
-			currentItem.querySelector("dt").innerHTML += '<a href="' + magnetLink + '"><img style="float:right;" src="' + magnetLogoURL + '" /></a>';
+			currentItem.querySelector("dt").innerHTML += '<a href="' + magnetLinkURI + '"><img style="float:right;" src="' + magnetLogoURL + '" /></a>';
 		}
 	}
 } catch(e) {}
