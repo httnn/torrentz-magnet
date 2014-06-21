@@ -1,15 +1,28 @@
 {
-   "content_scripts": [ {
-      "js": [ "script.js" ],
-	  "run_at": "document_end",
-      "matches": [ "http://torrentz.eu/*", "https://torrentz.eu/*", "https://torrentz.me/*", "https://torrentz.in/*" ]
-   } ],
-   "description": "Adds magnet links to torrent files on Torrentz.",
-   "manifest_version": 2,
-   "name": "Magnet Links for Torrentz",
-   "version": "0.6",
-"web_accessible_resources": ["icon16.png"],
-   "icons": { "16": "icon16.png",
-           "48": "icon48.png",
-          "128": "icon128.png" }
+  "content_scripts": [
+    {
+      "js": [
+        "script.js"
+      ],
+      "run_at": "document_end",
+      "matches": [
+        "*://torrentz.eu/*",
+        "*://torrentz.ch/*",
+        "*://torrentz.me/*",
+        "*://torrentz.in/*"
+      ]
+    }
+  ],
+  "description": "Adds magnet links to torrent files on Torrentz.",
+  "manifest_version": 2,
+  "name": "Magnet Links for Torrentz",
+  "version": "0.6.2",
+  "web_accessible_resources": [
+    "icon16.png"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
 }
