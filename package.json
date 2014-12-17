@@ -1,0 +1,27 @@
+{
+  "name": "torrentzmagnet",
+  "version": "0.0.0",
+  "description": "Magnet Links for Torrentz\r ===============",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "~3.8.10",
+    "gulp-pngmin": "~0.1.4",
+    "gulp-uglify": "~1.0.2",
+    "gulp-concat": "~2.4.2",
+    "gulp-zip": "~2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bodyflex/torrentz-magnet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bodyflex/torrentz-magnet/issues"
+  },
+  "homepage": "https://github.com/bodyflex/torrentz-magnet"
+}
