@@ -13,7 +13,7 @@ gulp.task('png', function () {
 gulp.task('js', function () {
 	gulp.src(['*.js', '!gulpfile.js'])
 		.pipe(concat('script.js'))
-		//.pipe(uglify())
+		.pipe(uglify())
 		.pipe(gulp.dest('extension/'));
 });
 
