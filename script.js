@@ -6,14 +6,13 @@ function Torrent(link, name, single) {
 	if(single) {
 		this.parseTrackers();
 		this.linkElement = document.createElement('dl');
-		this.linkElement.innerHTML = '<dt><a href="' + this.getMagnetURI() + '"><span class="u" style="background: transparent url("' + magnetLogoURL + '") no-repeat 5px center;">Magnet</span></a></dt>';
+		this.linkElement.innerHTML = '<dt><a href="' + this.getMagnetURI() + '"><span class="u magnet" style="background-image:url(' + magnetLogoURL + ');">Magnet</span></a></dt>';
 	} else {
 		var t = this;
 		this.linkElement = document.createElement('a');
 		this.linkElement.setAttribute('href', this.getMagnetURI());
 		this.linkElement.setAttribute('title', 'Fetching trackers...');
-		this.linkElement.style.float = 'right';
-		this.linkElement.style.opacity = 0.7;
+		this.linkElement.setAttribute('class', 'magnet');
 		this.linkElement.innerHTML = '<img src="' + magnetLogoURL + '" />';
 		this.linkElement.addEventListener('mouseover', function () {
 			if(!t.trackers)

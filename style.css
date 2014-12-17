@@ -1,0 +1,9 @@
+span.magnet {
+	background: transparent no-repeat 5px center;
+}
+
+a.magnet {
+	float: right;
+	opacity: 0.5;
+	transition: opacity 300ms;
+}
