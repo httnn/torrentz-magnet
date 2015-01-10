@@ -16,7 +16,7 @@
   "description": "Adds magnet links to torrent files on Torrentz.",
   "manifest_version": 2,
   "name": "Magnet Links for Torrentz",
-  "version": "0.8",
+  "version": "0.8.1",
   "web_accessible_resources": [
     "icon16.png"
   ],
