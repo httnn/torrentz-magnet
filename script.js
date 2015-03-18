@@ -75,6 +75,8 @@ if (pathName.length === 40) {
 		var torrent = new Torrent(link.getAttribute('href'), link.innerHTML.replace(/<[^>]*>/g, ''));
 
 		var dd = currentItem.querySelector('dd');
-		torrent.linkElement = dd.insertBefore(torrent.linkElement, dd.firstChild);
+		dd.insertBefore(torrent.linkElement, dd.firstChild);
+		
+		dd.style.width = (parseInt(window.getComputedStyle(dd).width) + 50) + 'px';
 	}
 }
