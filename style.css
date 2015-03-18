@@ -7,3 +7,11 @@ a.magnet {
 	opacity: 0.5;
 	transition: opacity 300ms;
 }
+
+span.m {
+	padding: 0 12px;
+}
+
+div.results>dl>dd {
+	width: 374px !important;
+}

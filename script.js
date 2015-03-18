@@ -9,19 +9,24 @@ function Torrent(link, name, single) {
 		this.linkElement.innerHTML = '<dt><a href="' + this.getMagnetURI() + '"><span class="u magnet" style="background-image:url(' + magnetLogoURL + ');">Magnet</span></a></dt>';
 	} else {
 		var t = this;
-		this.linkElement = document.createElement('a');
-		this.linkElement.setAttribute('href', this.getMagnetURI());
-		this.linkElement.setAttribute('title', 'Fetching trackers...');
-		this.linkElement.setAttribute('class', 'magnet');
-		this.linkElement.innerHTML = '<img src="' + magnetLogoURL + '" />';
-		this.linkElement.addEventListener('mouseover', function () {
+		this.linkElement = document.createElement('span');
+		this.linkElement.setAttribute('class', 'm');
+
+		var a = document.createElement('a');
+		a.setAttribute('href', this.getMagnetURI());
+		a.setAttribute('title', 'Fetching trackers...');
+		a.setAttribute('class', 'magnet');
+		a.innerHTML = '<img src="' + magnetLogoURL + '" />';
+		a.addEventListener('mouseover', function () {
 			if(!t.trackers)
 				t.timeout = setTimeout(function () { t.getTrackers() }, 100);
 		});
-		this.linkElement.addEventListener('mouseout', function () {
+		a.addEventListener('mouseout', function () {
 			if(t.timeout)
 				clearTimeout(t.timeout);
 		});
+
+		this.linkElement.appendChild(a);
 	}
 };
 
@@ -44,9 +49,10 @@ Torrent.prototype = {
 		request.onload = function() {
 			if (request.status >= 200 && request.status < 400) {
 				t.parseTrackers(request.responseText);
-				t.linkElement.setAttribute('href', t.getMagnetURI());
-				t.linkElement.setAttribute('title', 'Trackers added!');
-				t.linkElement.style.opacity = 1;
+				var a = t.linkElement.querySelector('a');
+				a.setAttribute('href', t.getMagnetURI());
+				a.setAttribute('title', 'Trackers added!');
+				a.style.opacity = 1;
 			}
 		};
 		request.send();
@@ -67,6 +73,8 @@ if (pathName.length === 40) {
 		var currentItem = searchItems[i];
 		var link = currentItem.querySelector('dt a');
 		var torrent = new Torrent(link.getAttribute('href'), link.innerHTML.replace(/<[^>]*>/g, ''));
-		torrent.linkElement = currentItem.querySelector('dt').appendChild(torrent.linkElement);
+
+		var dd = currentItem.querySelector('dd');
+		torrent.linkElement = dd.insertBefore(torrent.linkElement, dd.firstChild);
 	}
 }
