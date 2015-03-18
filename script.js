@@ -65,7 +65,7 @@ Torrent.prototype = {
 var pathName = location.pathname.replace(/\//g, '');
 if (pathName.length === 40) {
 	var name = document.querySelector('.download h2 span').innerHTML.replace(/<[^>]*>/g, '');
-	var torrent = new Torrent(location.href, name, true);
+	var torrent = new Torrent(pathName, name, true);
 	document.querySelector('.download dl').insertAdjacentElement('afterend', torrent.linkElement);
 } else if (pathName.match(/search/i)) {
 	var searchItems = document.querySelectorAll('.results dl');
