@@ -72,11 +72,15 @@ if (pathName.length === 40) {
 	for (var i = 0; i < searchItems.length; i++) {
 		var currentItem = searchItems[i];
 		var link = currentItem.querySelector('dt a');
-		var torrent = new Torrent(link.getAttribute('href'), link.innerHTML.replace(/<[^>]*>/g, ''));
-
 		var dd = currentItem.querySelector('dd');
+		var torrent;
+
+		if(!link) {
+			continue;
+		}
+
+		torrent = new Torrent(link.getAttribute('href'), link.innerHTML.replace(/<[^>]*>/g, ''));
 		dd.insertBefore(torrent.linkElement, dd.firstChild);
-		
 		dd.style.width = (parseInt(window.getComputedStyle(dd).width) + 50) + 'px';
 	}
 }
