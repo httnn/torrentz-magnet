@@ -24,7 +24,7 @@ gulp.task('css', function () {
 		.pipe(gulp.dest('extension/'));
 });
 
-gulp.task('zip', function () {
+gulp.task('zip', ['js', 'css', 'png'], function () {
 	gulp.src(['extension/*'])
 		.pipe(zip('extension.zip'))
 		.pipe(gulp.dest('.'));
