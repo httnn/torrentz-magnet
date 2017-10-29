@@ -76,7 +76,7 @@ if (pathName.length === 40) {
 
 		var dd = currentItem.querySelector('dd');
 		dd.insertBefore(torrent.linkElement, dd.firstChild);
-		
+
 		dd.style.width = (parseInt(window.getComputedStyle(dd).width) + 50) + 'px';
 	}
 }
