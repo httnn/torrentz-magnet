@@ -1,4 +1,4 @@
-# Magnet Links for Torrentz
+# Magnet Links for Torrentz2.eu
 
 Super-lightweight Chrome plugin that adds magnet-links to the Torrentz-site.
 Get it here: https://chrome.google.com/webstore/detail/magnet-links-for-torrentz/pgmaidhfoodebfiocgananbdfnankehm

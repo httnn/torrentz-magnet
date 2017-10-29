@@ -19,7 +19,7 @@ function Torrent(link, name, single) {
 		a.innerHTML = '<img src="' + magnetLogoURL + '" />';
 		a.addEventListener('mouseover', function () {
 			if(!t.trackers)
-				t.timeout = setTimeout(function () { t.getTrackers() }, 100);
+				t.timeout = setTimeout(t.getTrackers, 100);
 		});
 		a.addEventListener('mouseout', function () {
 			if(t.timeout)
