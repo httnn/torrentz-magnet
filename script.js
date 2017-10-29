@@ -19,7 +19,7 @@ function Torrent(link, name, single) {
 		a.innerHTML = '<img src="' + magnetLogoURL + '" />';
 		a.addEventListener('mouseover', function () {
 			if(!t.trackers)
-				t.timeout = setTimeout(function () { t.getTrackers() }, 100);
+				t.timeout = setTimeout(t.getTrackers, 100);
 		});
 		a.addEventListener('mouseout', function () {
 			if(t.timeout)
@@ -76,7 +76,7 @@ if (pathName.length === 40) {
 
 		var dd = currentItem.querySelector('dd');
 		dd.insertBefore(torrent.linkElement, dd.firstChild);
-		
+
 		dd.style.width = (parseInt(window.getComputedStyle(dd).width) + 50) + 'px';
 	}
 }
